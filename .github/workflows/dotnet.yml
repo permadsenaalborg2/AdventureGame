@@ -22,10 +22,7 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Check TECH COOL
-      uses: actions/checkout@master
-      with:
-        repository: permadsenaalborg2/TECHCOOL_FORK
-        path: libs
+      run: git clone https://github.com/permadsenaalborg2/TECHCOOL_FORK
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
