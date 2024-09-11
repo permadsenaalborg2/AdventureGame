@@ -5,7 +5,7 @@
 <!--
     <ProjectReference Include="..\..\..\..\..\Other_repos\sinb\TECHCOOL\TECHCOOL.csproj" />
 -->
-  <ProjectReference Include="..\..\..\..\..\Other_repos\pmad\TECHCOOL_FORK\TECHCOOL.csproj" />
+  <ProjectReference Include="..\..\TECHCOOL_FORK\TECHCOOL.csproj" />
 
   </ItemGroup>
 
