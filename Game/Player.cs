@@ -1,6 +1,6 @@
 ﻿namespace Adventure
-{
-    public class Player
+
+{   public class Player
     {
         public Room CurrentRoom { get; set; }
         public Inventory Player_Inventory { get; init; }

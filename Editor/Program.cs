@@ -3,11 +3,15 @@ using Adventure.Editor;
 using Adventure;
 
 
-List<Room> startlist;
-startlist = [
-    new Room("B-109", "Her er vi!"),
-    new Room("C-103", "Her er vi ikke!"),
-    new Room("C-104", "Her er vi heller ikke!")];
+var r1 = new Room("B-109", "Her er vi!");
+var r2 = new Room("C-103", "Her er vi ikke!");
+var r3 = new Room("C-104", "Her er vi heller ikke!");
+
+List<Room> startRoomList;
+startRoomList = [r1, r2, r3];
+
+r1.AddTwoWayExit("frem", "tilbage", r2);
+r2.AddTwoWayExit("frem", "tilbage", r3);
 
 List<Item> startItemList;
 startItemList = [
@@ -15,12 +19,13 @@ startItemList = [
     new Item("Kaffekop", "Pers kaffe"),
     new Item("TDD - Beck", "God bog!")];
 
-
 Menu menu = new Menu();
-menu.Add(new RoomListScreen(startlist));
+menu.Add(new RoomListScreen(startRoomList));
 menu.Add(new ItemListScreen(startItemList));
+menu.Add(new GamePlayScreen(startRoomList[0]));
 menu.Add(new HelpScreen());
 
+menu.AddKey(ConsoleKey.D, () => { Game g = new(); g.DemoGame(); });
 Screen.Display(menu);
 
 //Screen.Display(new HelpScreen());
@@ -33,5 +38,5 @@ Screen.Display(menu);
 // Console.WriteLine(r);
 // Console.WriteLine(e);
 
-// Screen.Clear();
-// Console.WriteLine("So Long, and Thanks for All the Fish :-)");
+Screen.Clear();
+Console.WriteLine("So Long, and Thanks for All the Fish :-)");

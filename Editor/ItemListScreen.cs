@@ -12,7 +12,6 @@ namespace Adventure.Editor
             listPage.Add(startlist);
             listPage.AddKey(ConsoleKey.F1, CreateNewItem);
             listPage.AddKey(ConsoleKey.F2, DeleteItem);
-            listPage.AddKey(ConsoleKey.F12, ShowHelp);
             listPage.AddKey(ConsoleKey.Escape, Quit);
             listPage.AddColumn("Name", "Name");
             listPage.AddColumn("Description", "Description", 30);
@@ -21,9 +20,10 @@ namespace Adventure.Editor
         public override string Title { get; set; } = "List of items";
         protected override void Draw()
         {
-            Console.WriteLine("Press F1 to add a new Room");
-            Console.WriteLine("Press F2 to delete a Room");
-            Console.WriteLine("Press F12 to show help");
+            Console.WriteLine("Press F1 to add a new item");
+            Console.WriteLine("Press F2 to delete an item");
+            Console.WriteLine("Press ENTER to edit an item");
+            Console.WriteLine("Press ESC to exit");
 
             Item selected = listPage.Select();
 

@@ -1,4 +1,4 @@
-namespace Game.Test;
+namespace Test;
 
 using Adventure;
 public class UnitTest1
@@ -27,7 +27,7 @@ public class UnitTest1
         Console.SetOut(writer);
 
         // game
-        var g = new Game2();
+        var g = new Game();
         var room = g.DemoGame();
 
         // act & assert

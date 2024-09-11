@@ -16,14 +16,16 @@ namespace Adventure.Editor
             listPage.AddKey(ConsoleKey.Escape, Quit);
             listPage.AddColumn("Rooms", "Name");
             listPage.AddColumn("Description", "Description", 30);
+            listPage.AddColumn("Exits", "Exits", 60);
         }
 
         public override string Title { get; set; } = "List of rooms";
         protected override void Draw()
         {
-            Console.WriteLine("Press F1 to add a new Room");
-            Console.WriteLine("Press F2 to delete a Room");
-            Console.WriteLine("Press F12 to show help");
+            Console.WriteLine("Press F1 to add a new room");
+            Console.WriteLine("Press F2 to delete a room");
+            Console.WriteLine("Press ENTER to edit a room");
+            Console.WriteLine("Press ESC to exit");
 
             Room selected = listPage.Select();
 

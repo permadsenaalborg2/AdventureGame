@@ -49,6 +49,7 @@
         {
             Exits.Add(desc, room);
         }
+        
         public void AddTwoWayExit(string desc, string back, Room room)
         {
             Exits.Add(desc, room);
@@ -76,7 +77,7 @@
         public string AutoDescription()
         {
             string result = Name + ": " + Description + Environment.NewLine + Environment.NewLine; ;
-            result += Exits + Environment.NewLine;
+            result += Exits.ToStringMultiLine() + Environment.NewLine;
             result += "Lokation " + Room_Inventory;
             return result;
         }
