@@ -2,6 +2,6 @@
 
 var g = new Game();
 
-var room = g.DemoGame();
+var room = new DemoGame().StartRoom;
 Player player = new(room);
 g.Play(player);

@@ -15,6 +15,7 @@ namespace Adventure.Editor
             listPage.AddKey(ConsoleKey.Escape, Quit);
             listPage.AddColumn("Name", "Name");
             listPage.AddColumn("Description", "Description", 30);
+            listPage.AddColumn("Location", "Location", 30);
         }
 
         public override string Title { get; set; } = "List of items";

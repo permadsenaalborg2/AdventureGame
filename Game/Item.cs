@@ -20,5 +20,14 @@
             return (Name.Equals(DefaultItemName) && Description.Equals(DefaultItemDesc));
         }
 
+        public string Location { get; private set; }
+
+        public void MoveItem(IHasInventory from, IHasInventory to)
+        {
+            to.Inventory.Add(this);
+            from.Inventory.Remove(this);
+            Location = to.Name;
+
+        }
     }
 }

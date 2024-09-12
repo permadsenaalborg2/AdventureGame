@@ -13,11 +13,12 @@ startRoomList = [r1, r2, r3];
 r1.AddTwoWayExit("frem", "tilbage", r2);
 r2.AddTwoWayExit("frem", "tilbage", r3);
 
+var i1 = new Item("RubberDuck", "Pers and");
+var i2 = new Item("Kaffekop", "Pers kaffe");
+var i3 = new Item("TDD - Beck", "God bog!");
+
 List<Item> startItemList;
-startItemList = [
-    new Item("RubberDuck", "Pers and"),
-    new Item("Kaffekop", "Pers kaffe"),
-    new Item("TDD - Beck", "God bog!")];
+startItemList = [i1, i2, i3];
 
 Menu menu = new Menu();
 menu.Add(new RoomListScreen(startRoomList));
@@ -25,7 +26,7 @@ menu.Add(new ItemListScreen(startItemList));
 menu.Add(new GamePlayScreen(startRoomList[0]));
 menu.Add(new HelpScreen());
 
-menu.AddKey(ConsoleKey.D, () => { Game g = new(); g.DemoGame(); });
+menu.AddKey(ConsoleKey.D, () => { Game g = new(); new GamePlayScreen(new DemoGame().StartRoom); });
 Screen.Display(menu);
 
 //Screen.Display(new HelpScreen());

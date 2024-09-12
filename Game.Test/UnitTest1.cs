@@ -28,7 +28,7 @@ public class UnitTest1
 
         // game
         var g = new Game();
-        var room = g.DemoGame();
+        var room = new DemoGame().StartRoom;
 
         // act & assert
         // step 1

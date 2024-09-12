@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game", "Game\Game.csproj", "{1A115A1D-6C09-46B7-8D23-653E1B35E714}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Test", "Game.Test\Game.Test.csproj", "{97BA5510-4EDE-4FA1-B932-DE1B9BC47C22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Game.Test\Test.csproj", "{97BA5510-4EDE-4FA1-B932-DE1B9BC47C22}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Editor", "Editor\Editor.csproj", "{FD89E0B9-E39A-467A-8308-CB76265E0C74}"
 EndProject
