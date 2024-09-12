@@ -8,27 +8,38 @@ on:
   pull_request:
     branches: [ "main" ]
 
+# Use this for debug
+#    - name: Setup tmate session
+#      uses: mxschmitt/action-tmate@v3
+
+
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
     steps:
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
 
     - uses: actions/checkout@v4
       with:
         path: main
+        
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
+        
     - name: Check TECH COOL
       run: git clone https://github.com/permadsenaalborg2/TECHCOOL_FORK
+      
     - name: Restore dependencies
       run: dotnet restore
+      working-directory: main
+      
     - name: Build
       run: dotnet build --no-restore
+      working-directory: main
+      
     - name: Test
       run: dotnet test --no-build --verbosity normal
+      working-directory: main
