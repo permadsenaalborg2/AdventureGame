@@ -24,11 +24,14 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-    - name: Check TECH COOL
-      run: git clone https://github.com/permadsenaalborg2/TECHCOOL_FORK
+    #- name: Check TECH COOL
+    #  run: git clone https://github.com/permadsenaalborg2/TECHCOOL_FORK
     - name: Restore dependencies
       run: dotnet restore
+      working-directory: main
     - name: Build
       run: dotnet build --no-restore
+      working-directory: main
     - name: Test
       run: dotnet test --no-build --verbosity normal
+      working-directory: main
