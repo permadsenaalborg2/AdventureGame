@@ -6,11 +6,11 @@ namespace Adventure.Editor
     {
         public override string Title { get; set; } = "Play Game :-)";
 
-        private Room startRoom;
-        //private Game MyGame;
-        public GamePlayScreen(Room r)
+        // private Room startRoom;
+        private Game MyGame;
+        public GamePlayScreen(Game g)
         {
-            startRoom = r;
+            MyGame = g;
             // AddKey(ConsoleKey.F12, () => Screen.Display(new HelpScreen()));
         }
         protected override void Draw()
@@ -19,9 +19,9 @@ namespace Adventure.Editor
             DefaultBackground = ConsoleColor.DarkGray;
             Screen.Clear();
 
-            Player player = new(startRoom);
-            var g = new Game();
-            g.Play(player);
+            Player player = new(MyGame.StartRoom);
+            //var g = new Game();
+            MyGame.Play(player);
             Quit();
 
             DefaultForeground = ConsoleColor.Yellow;

@@ -3,6 +3,17 @@ namespace Adventure
 {
     public class Game
     {
+        public List<Room> RoomList { get; }
+        public List<Item> ItemList { get;}
+
+        public Room? StartRoom { get; set;}
+
+        public Game()
+        {
+            RoomList = new List<Room>();
+            ItemList = new List<Item>();
+        }
+
         public void Play(Player player)
         {
             // Main game loop
@@ -100,6 +111,5 @@ namespace Adventure
             Console.WriteLine(str);
             Console.ReadKey();
         }
-
     }
 }

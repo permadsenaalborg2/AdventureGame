@@ -21,15 +21,10 @@ List<Item> startItemList;
 startItemList = [i1, i2, i3];
 */
 
-var d = new DemoGame();
 
-Menu menu = new Menu();
-menu.Add(new RoomListScreen(d.RoomList));
-menu.Add(new ItemListScreen(d.ItemList, d.RoomList));
-menu.Add(new GamePlayScreen(d.StartRoom));
-menu.Add(new HelpScreen());
 
-menu.AddKey(ConsoleKey.D, () => { Game g = new(); new GamePlayScreen(new DemoGame().StartRoom); });
+myMenu menu = new ();
+
 Screen.Display(menu);
 
 //Screen.Display(new HelpScreen());
@@ -44,3 +39,23 @@ Screen.Display(menu);
 
 Screen.Clear();
 Console.WriteLine("So Long, and Thanks for All the Fish :-)");
+
+class myMenu : Menu
+{
+    public myMenu() : base()
+    {
+        var g = new Game();
+
+        Add(new RoomListScreen(g.RoomList));
+        Add(new ItemListScreen(g));
+        Add(new GamePlayScreen(g));
+        Add(new HelpScreen());
+
+        AddKey(ConsoleKey.D, () => { DemoGame.TechGame(g); });
+    }
+    protected override void Draw()
+    {
+        base.Draw();
+        Console.WriteLine("Press D to load Demo");
+    }
+}

@@ -28,11 +28,11 @@ public class UnitTest1
 
         // game
         var g = new Game();
-        var room = new DemoGame().StartRoom;
+        DemoGame.TechGame(g);
 
         // act & assert
         // step 1
-        Player player = new(room);
+        Player player = new Player(g.StartRoom);
         var playing = g.Round(player);
         Assert.True(playing);
         Assert.Equal("Friis", player.CurrentRoom.Name);

@@ -1,44 +1,35 @@
 ﻿namespace Adventure
 {
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
 
     public class DemoGame
-    {
-        public List<Room> RoomList { get; set; }
-        public List<Item> ItemList { get; set; }
-
-        public Room StartRoom { get; set; }
-
-        public DemoGame()
+    { 
+        public static void TechGame(Game game)
         {
-            RoomList = new List<Room>();
-            ItemList = new List<Item>();
-
+            game.RoomList.Clear();
+            game.ItemList.Clear();
+            game.StartRoom = null;
+            
             // Initialize sites
             Room struervej = new("Struervej", "Du står på parkeringspladsen foran Struervej");
             Room uttrupvej = new("Øster Uttrup Vej", "Du står på parkeringspladsen foran Øster Uttrup Vej");
             Room friis = new("Friis", "Du står ved indgangen til Friis");
 
-            RoomList.AddRange([struervej, uttrupvej, friis]);
+            game.RoomList.AddRange([struervej, uttrupvej, friis]);
 
             var skod = new Item("skod", "Cigarat skod");
             struervej.AddItem(skod);
 
-            ItemList.Add(skod);
+            game.ItemList.Add(skod);
 
             Room jomfru = new("Jomfru Ane Gade", "Du er endt i gaden. Der er ingen vej tilbage, men der er gratis øl!");
-            RoomList.Add(jomfru);
+            game.RoomList.Add(jomfru);
 
             for (int tmp = 0; tmp < 12; tmp++)
             {
                 var temp_item = new Item($"øl_{tmp}", "God øl");
                 jomfru.AddItem(temp_item);
-                ItemList.Add(temp_item);
+                game.ItemList.Add(temp_item);
             }
 
             // Add bus routes
@@ -67,7 +58,7 @@
 
             var k1 = new Item("cup", "Pers kaffekop");
             canteen.AddItem(k1);
-            ItemList.AddRange([b1, b2, k1]);
+            game.ItemList.AddRange([b1, b2, k1]);
 
             struervej.AddTwoWayExit("nord", "syd", adm);
             struervej.AddTwoWayExit("øst", "vest", canteen);
@@ -75,9 +66,8 @@
             adm.AddTwoWayExit("venstre", "højre", teacher_prep);
             adm.AddTwoWayExit("frem", "tilbage", teacher_office);
 
-            RoomList.AddRange([adm, teacher_office, teacher_prep, canteen]);
-            StartRoom = struervej;
+            game.RoomList.AddRange([adm, teacher_office, teacher_prep, canteen]);
+            game.StartRoom = struervej;
         }
-
     }
 }

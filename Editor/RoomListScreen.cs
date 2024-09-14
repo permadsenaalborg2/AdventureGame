@@ -8,8 +8,8 @@ namespace Adventure.Editor
 
         public RoomListScreen(List<Room> startlist)
         {
-            listPage = new ListPage<Room>();
-            listPage.Add(startlist);
+            listPage = new ListPage<Room>(startlist);
+            
             listPage.AddKey(ConsoleKey.F1, CreateNewRoom);
             listPage.AddKey(ConsoleKey.F2, DeleteRoom);
             listPage.AddKey(ConsoleKey.F12, ShowHelp);

@@ -1,7 +1,7 @@
 ﻿using Adventure;
 
 var g = new Game();
+DemoGame.TechGame(g);
 
-var room = new DemoGame().StartRoom;
-Player player = new(room);
+Player player = new(g.StartRoom);
 g.Play(player);
