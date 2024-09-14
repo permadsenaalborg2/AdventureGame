@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <ProjectReference Include="..\..\TECHCOOL_YET_ANOTHER_FORK\TECHCOOL.csproj" />
     <ProjectReference Include="..\Game\Game.csproj" />
 <!--
     <ProjectReference Include="..\..\..\..\..\Other_repos\sinb\TECHCOOL\TECHCOOL.csproj" />
 -->
-  <ProjectReference Include="..\..\TECHCOOL_FORK\TECHCOOL.csproj" />
 
   </ItemGroup>
 

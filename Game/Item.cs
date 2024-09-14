@@ -1,4 +1,6 @@
-﻿namespace Adventure
+﻿using System.Xml.Linq;
+
+namespace Adventure
 {
     public class Item
     {
@@ -7,6 +9,7 @@
 
         public string Name { get; init; }
         public string Description { get; init; }
+        public string Location { get; set; } = String.Empty;
 
         public Item(string name, string description)
         {
@@ -20,13 +23,24 @@
             return (Name.Equals(DefaultItemName) && Description.Equals(DefaultItemDesc));
         }
 
-        public string Location { get; private set; }
 
         public void MoveItem(IHasInventory from, IHasInventory to)
         {
             to.Inventory.Add(this);
             from.Inventory.Remove(this);
             Location = to.Name;
+        }
+
+        public void MoveToLocation(List<Room> roomlist)
+        {
+            /*
+            var from = roomlist.Single(i => i.Name == Location);
+            var to = roomlist.Contains(this);
+
+
+            MoveItem(from, to);
+            Location = loc;
+            */
 
         }
     }

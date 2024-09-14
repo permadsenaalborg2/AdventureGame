@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Game.Test\Test.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Editor", "Editor\Editor.csproj", "{FD89E0B9-E39A-467A-8308-CB76265E0C74}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TECHCOOL", "..\TECHCOOL_FORK\TECHCOOL.csproj", "{863C662A-49B6-44A6-AE45-3C841B6693D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TECHCOOL", "..\TECHCOOL_YET_ANOTHER_FORK\TECHCOOL.csproj", "{3FD68F32-BBAA-4509-A2D4-E335843E85F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{FD89E0B9-E39A-467A-8308-CB76265E0C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD89E0B9-E39A-467A-8308-CB76265E0C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD89E0B9-E39A-467A-8308-CB76265E0C74}.Release|Any CPU.Build.0 = Release|Any CPU
-		{863C662A-49B6-44A6-AE45-3C841B6693D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{863C662A-49B6-44A6-AE45-3C841B6693D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{863C662A-49B6-44A6-AE45-3C841B6693D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{863C662A-49B6-44A6-AE45-3C841B6693D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FD68F32-BBAA-4509-A2D4-E335843E85F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FD68F32-BBAA-4509-A2D4-E335843E85F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FD68F32-BBAA-4509-A2D4-E335843E85F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FD68F32-BBAA-4509-A2D4-E335843E85F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

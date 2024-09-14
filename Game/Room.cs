@@ -61,18 +61,6 @@
         {
             return Inventory.Single(i => i.Name == name);
         }
-        /*
-        public void MoveItem(string name, IHasInventory p)
-        {
-            Item it = Inventory.Single(i => i.Name == name);
-            MoveItem(it, p);
-        }
-        public void MoveItem(Item it, IHasInventory p)
-        {
-            p.Inventory.Add(it);
-            Inventory.Remove(it);
-        }
-        */
 
         public string AutoDescription()
         {

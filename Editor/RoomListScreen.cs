@@ -14,9 +14,9 @@ namespace Adventure.Editor
             listPage.AddKey(ConsoleKey.F2, DeleteRoom);
             listPage.AddKey(ConsoleKey.F12, ShowHelp);
             listPage.AddKey(ConsoleKey.Escape, Quit);
-            listPage.AddColumn("Rooms", "Name");
-            listPage.AddColumn("Description", "Description", 30);
-            listPage.AddColumn("Exits", "Exits", 60);
+            listPage.AddColumn("Rooms", "Name", 20);
+            listPage.AddColumn("Description", "Description", 70);
+            listPage.AddColumn("Exits", "Exits", 85);
         }
 
         public override string Title { get; set; } = "List of rooms";

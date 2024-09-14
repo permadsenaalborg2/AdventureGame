@@ -2,7 +2,7 @@
 using Adventure.Editor;
 using Adventure;
 
-
+/*
 var r1 = new Room("B-109", "Her er vi!");
 var r2 = new Room("C-103", "Her er vi ikke!");
 var r3 = new Room("C-104", "Her er vi heller ikke!");
@@ -19,11 +19,14 @@ var i3 = new Item("TDD - Beck", "God bog!");
 
 List<Item> startItemList;
 startItemList = [i1, i2, i3];
+*/
+
+var d = new DemoGame();
 
 Menu menu = new Menu();
-menu.Add(new RoomListScreen(startRoomList));
-menu.Add(new ItemListScreen(startItemList));
-menu.Add(new GamePlayScreen(startRoomList[0]));
+menu.Add(new RoomListScreen(d.RoomList));
+menu.Add(new ItemListScreen(d.ItemList, d.RoomList));
+menu.Add(new GamePlayScreen(d.StartRoom));
 menu.Add(new HelpScreen());
 
 menu.AddKey(ConsoleKey.D, () => { Game g = new(); new GamePlayScreen(new DemoGame().StartRoom); });

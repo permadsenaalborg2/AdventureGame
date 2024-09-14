@@ -18,7 +18,7 @@ namespace Adventure
             bool playing = true;
             var room = player.CurrentRoom;
 
-            Console.Clear();
+            //Console.Clear();
             Console.WriteLine(player);
             Console.WriteLine(room.AutoDescription());
 

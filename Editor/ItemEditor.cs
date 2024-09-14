@@ -5,9 +5,11 @@ namespace Adventure.Editor
     public class EditItemScreen : EditorScreen
     {
         public Item CurrentItem { get; set; }
+        private readonly List<Room> roomlist;
 
-        public EditItemScreen(Item i)
+        public EditItemScreen(Item i, List<Room> myroomlist)
         {
+            roomlist = myroomlist;
             CurrentItem = i;
             if (i.IsDefault())
             {
@@ -27,7 +29,18 @@ namespace Adventure.Editor
             editor.TextBox("Item name", "Name");
             editor.TextBox("Description", "Description");
 
-            editor.Edit(CurrentItem);
+            var room_dict = new Dictionary<string, object>();
+            foreach (var room in roomlist)
+            {
+                room_dict[room.Name] = (object) 
+                    room.Name;
+            }
+            editor.SelectBox("Location", "Location", room_dict);
+
+            if (editor.Edit(CurrentItem))
+            {
+                CurrentItem.MoveToLocation(roomlist);
+            }
 
             Quit();
         }

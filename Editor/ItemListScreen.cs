@@ -5,9 +5,12 @@ namespace Adventure.Editor
     public class ItemListScreen : EditorScreen
     {
         private readonly ListPage<Item> listPage;
+        private readonly List<Room> roomlist;
 
-        public ItemListScreen(List<Item> startlist)
+
+        public ItemListScreen(List<Item> startlist, List<Room> myroomlist)
         {
+            roomlist = myroomlist;
             listPage = new ListPage<Item>();
             listPage.Add(startlist);
             listPage.AddKey(ConsoleKey.F1, CreateNewItem);
@@ -15,7 +18,7 @@ namespace Adventure.Editor
             listPage.AddKey(ConsoleKey.Escape, Quit);
             listPage.AddColumn("Name", "Name");
             listPage.AddColumn("Description", "Description", 30);
-            listPage.AddColumn("Location", "Location", 30);
+            listPage.AddColumn("Location", "Location", 20);
         }
 
         public override string Title { get; set; } = "List of items";
@@ -30,14 +33,14 @@ namespace Adventure.Editor
 
             if (selected != null)
             {
-                Screen.Display(new EditItemScreen(selected));
+                Screen.Display(new EditItemScreen(selected, roomlist));
             }
         }
 
         void CreateNewItem(Item _)
         {
             Item new_item = new();
-            Screen.Display(new EditItemScreen(new_item));
+            Screen.Display(new EditItemScreen(new_item, roomlist));
             if (!new_item.IsDefault())
                 listPage.Add(new_item);
         }

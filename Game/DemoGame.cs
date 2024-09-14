@@ -9,7 +9,6 @@
 
     public class DemoGame
     {
-
         public List<Room> RoomList { get; set; }
         public List<Item> ItemList { get; set; }
 
@@ -17,7 +16,6 @@
 
         public DemoGame()
         {
-
             RoomList = new List<Room>();
             ItemList = new List<Item>();
 
@@ -59,12 +57,17 @@
             Room teacher_prep = new("Forberedelse", "Du står i lærenes forberedelseskontor");
             Room teacher_office = new("Lærerværelset", "Du står på lærerværelset");
 
-            teacher_office.AddItem(new Item("book_test", "Test Driven Development: By Example: Beck, Kent"));
-            teacher_office.AddItem(new Item("book_ci", "Continuous Delivery: David Farley"));
+            var b1 = new Item("book_test", "Test Driven Development: By Example: Beck, Kent");
+            var b2 = new Item("book_ci", "Continuous Delivery: David Farley");
+
+            teacher_office.AddItem(b1);
+            teacher_office.AddItem(b2);
 
             Room canteen = new("Kantinen", "Du står i kantinen på Struervej");
 
-            canteen.AddItem(new Item("cup", "Pers kaffekop"));
+            var k1 = new Item("cup", "Pers kaffekop");
+            canteen.AddItem(k1);
+            ItemList.AddRange([b1, b2, k1]);
 
             struervej.AddTwoWayExit("nord", "syd", adm);
             struervej.AddTwoWayExit("øst", "vest", canteen);
