@@ -1,19 +1,20 @@
 ﻿namespace Adventure
 
-{   public class Player: IHasInventory
+{
+    public class Player : IHasInventory
     {
         public Room CurrentRoom { get; set; }
         public Inventory Inventory { get; set; }
-        public Player(Room startingRoom)
+        public Player(string name, Room startingRoom)
         {
             CurrentRoom = startingRoom;
             Inventory = new();
-            Name = "Player";
+            Name = name;
         }
 
         public override string ToString()
         {
-            return "Spiller " + Inventory + Environment.NewLine;
+            return Name + " " + Inventory + Environment.NewLine;
         }
 
         public string Name { get; init; }
@@ -37,7 +38,7 @@
 
         public bool ValidItem(string name)
         {
-            return Inventory.Exists(i => i.Name == name); 
+            return Inventory.Exists(i => i.Name == name);
         }
 
         public Item GetItem(string name)

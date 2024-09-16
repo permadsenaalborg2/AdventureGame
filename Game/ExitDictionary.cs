@@ -16,7 +16,7 @@
         private string ToStringImpl(bool multiline)
         {
             string newline = (multiline ? Environment.NewLine : "");
-            string result = "Udgange: " + newline;
+            string result = "";
 
             foreach (var roomexit in this)
             {

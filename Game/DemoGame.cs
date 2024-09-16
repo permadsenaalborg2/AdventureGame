@@ -6,9 +6,7 @@
     { 
         public static void TechGame(Game game)
         {
-            game.RoomList.Clear();
-            game.ItemList.Clear();
-            game.StartRoom = null;
+            game.Clear();
             
             // Initialize sites
             Room struervej = new("Struervej", "Du står på parkeringspladsen foran Struervej");

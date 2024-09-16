@@ -5,12 +5,18 @@ namespace Adventure.Editor
     public class HelpScreen : EditorScreen
     {
         public override string Title { get; set; } = "Help";
+        private static int count = 0;
 
         public HelpScreen()
         {
             ExitOnEscape();
             AddKey(ConsoleKey.F1, () => Screen.Display(new AboutScreen()));
-            AddKey(ConsoleKey.F2, () => Screen.Display(new HelpScreen()));
+            AddKey(ConsoleKey.F2, () => 
+            {
+                        var scr = new HelpScreen(); 
+                        scr.Title = $"Help {HelpScreen.count++}";
+                        Screen.Display(scr);
+            });
         }
         protected override void Draw()
         {

@@ -33,15 +33,11 @@ namespace Adventure
 
         public void MoveToLocation(List<Room> roomlist)
         {
-            /*
-            var from = roomlist.Single(i => i.Name == Location);
-            var to = roomlist.Contains(this);
+            var from = roomlist.Single(r => r.Inventory.Contains(this));
+            var to = roomlist.Single(r => r.Name == this.Location);
 
 
             MoveItem(from, to);
-            Location = loc;
-            */
-
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Adventure.Editor
             Console.WriteLine("Press F2 to delete an item");
             Console.WriteLine("Press ENTER to edit an item");
             Console.WriteLine("Press ESC to exit");
-
+            Console.WriteLine();
             Item selected = listPage.Select();
 
             if (selected != null)

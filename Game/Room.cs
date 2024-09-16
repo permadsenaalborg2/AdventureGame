@@ -32,6 +32,7 @@
         public void AddItem(Item it)
         {
             Inventory.Add(it);
+            it.Location = this.Name;
         }
 
         public void AddExit(string desc, Room room)
@@ -64,7 +65,8 @@
 
         public string AutoDescription()
         {
-            string result = Name + ": " + Description + Environment.NewLine + Environment.NewLine; ;
+            string result = Name + ": " + Description + Environment.NewLine + Environment.NewLine;
+            result += "Udgange:" + Environment.NewLine;
             result += Exits.ToStringMultiLine() + Environment.NewLine;
             result += "Lokation " + Inventory;
             return result;

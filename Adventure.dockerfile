@@ -3,9 +3,8 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0-jammy AS build
 RUN apt-get update && apt-get upgrade -y
 
 WORKDIR /app
+COPY ./ .
 
-COPY Game.csproj .
-COPY *.cs .
 
 RUN dotnet publish -c Release
 ENTRYPOINT ["dotnet", "run"]

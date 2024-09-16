@@ -4,14 +4,17 @@ namespace Adventure
     public class Game
     {
         public List<Room> RoomList { get; }
-        public List<Item> ItemList { get;}
+        public Inventory ItemList { get;}
 
         public Room? StartRoom { get; set;}
+                
+        //to do public Player player1 { get; set;}
+
 
         public Game()
         {
             RoomList = new List<Room>();
-            ItemList = new List<Item>();
+            ItemList = new ();
         }
 
         public void Play(Player player)
@@ -24,12 +27,18 @@ namespace Adventure
             }
         }
 
+        public void Clear()
+        {
+            RoomList.Clear();
+            ItemList.Clear();
+            StartRoom = null;
+        }
+
         public bool Round(Player player)
         {
             bool playing = true;
             var room = player.CurrentRoom;
 
-            //Console.Clear();
             Console.WriteLine(player);
             Console.WriteLine(room.AutoDescription());
 

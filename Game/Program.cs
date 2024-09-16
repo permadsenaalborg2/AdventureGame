@@ -3,5 +3,5 @@
 var g = new Game();
 DemoGame.TechGame(g);
 
-Player player = new(g.StartRoom);
+Player player = new("Spiller", g.StartRoom);
 g.Play(player);
