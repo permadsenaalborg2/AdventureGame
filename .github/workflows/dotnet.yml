@@ -43,6 +43,9 @@ jobs:
       run: dotnet publish
       working-directory: main
 
+    - name: Build the Docker image
+      run: docker build . --file main/Adventure.dockerfile --tag adventuregame
+
     # Use this for debug
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
+    #- name: Setup tmate session
+    #  uses: mxschmitt/action-tmate@v3
