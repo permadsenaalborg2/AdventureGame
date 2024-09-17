@@ -4,5 +4,5 @@ RUN apt-get update && apt-get upgrade -y
 COPY main/Editor/bin/Release/net8.0/publish /home
 WORKDIR /home/
 #ENTRYPOINT ["Editor"]
-CMD Editor
+CMD ./Editor
 
