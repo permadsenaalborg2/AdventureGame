@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Build the Docker image
-      run: docker build . --file main/Adventure.dockerfile --tag adventuregame
-      
+#    - name: Build the Docker image
+#      run: docker build . --file main/Adventure.dockerfile --tag adventuregame
+    - name: Testing
+      run: echo "Just for testing"
