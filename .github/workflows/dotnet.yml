@@ -46,6 +46,8 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file main/Adventure.dockerfile --tag ghcr.io/permadsenaalborg2/adventuregame
 
+    - name: Debug
+      run: echo "${{ secrets.GITHUB_TOKEN }}"
     - name: Login to GitHub Container Registry
       uses: docker/login-action@v3
       with:
