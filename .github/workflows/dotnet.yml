@@ -31,7 +31,7 @@ jobs:
         dotnet-version: 8.0.x
         
     - name: Check TECH COOL
-      run: git clone https://github.com/permadsenaalborg2/TECHCOOL_YET_ANOTHER_FORK
+      run: git clone https://github.com/${{ github.actor }}/TECHCOOL_YET_ANOTHER_FORK
       
     - name: Restore dependencies
       run: dotnet restore
@@ -50,7 +50,7 @@ jobs:
       working-directory: main
 
     - name: Build the Docker image
-      run: docker build . --file main/Adventure.dockerfile --tag ghcr.io/permadsenaalborg2/adventuregame
+      run: docker build . --file main/Adventure.dockerfile --tag ghcr.io/${{ github.actor }}/adventuregame
 
     - name: Debug
       run: echo "${{ secrets.GITHUB_TOKEN }} /  ${{ github.actor }}"
@@ -63,7 +63,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Push the Docker image
-      run: docker push ghcr.io/permadsenaalborg2/adventuregame
+      run: docker push ghcr.io/${{ github.actor }}/adventuregame
 
     # Use this for debug
     #- name: Setup tmate session
