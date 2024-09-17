@@ -11,11 +11,11 @@ namespace Adventure.Editor
         {
             ExitOnEscape();
             AddKey(ConsoleKey.F1, () => Screen.Display(new AboutScreen()));
-            AddKey(ConsoleKey.F2, () => 
+            AddKey(ConsoleKey.F2, () =>
             {
-                        var scr = new HelpScreen(); 
-                        scr.Title = $"Help {HelpScreen.count++}";
-                        Screen.Display(scr);
+                var scr = new HelpScreen();
+                scr.Title = $"Help {HelpScreen.count++}";
+                Screen.Display(scr);
             });
         }
         protected override void Draw()

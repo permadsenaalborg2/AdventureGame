@@ -13,7 +13,7 @@
         {
             Name = name;
             Description = description;
-            Exits = new ();
+            Exits = new();
             Inventory = new();
         }
 
@@ -23,7 +23,7 @@
         {
             return Name;
         }
-       
+
         public bool IsDefault()
         {
             return (Name.Equals(DefaultRoomName) && Description.Equals(DefaultRoomDesc));
@@ -39,7 +39,7 @@
         {
             Exits.Add(desc, room);
         }
-        
+
         public void AddTwoWayExit(string desc, string back, Room room)
         {
             Exits.Add(desc, room);

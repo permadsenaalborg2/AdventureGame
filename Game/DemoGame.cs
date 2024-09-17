@@ -3,11 +3,11 @@
     using System.Collections.Generic;
 
     public class DemoGame
-    { 
+    {
         public static void TechGame(Game game)
         {
             game.Clear();
-            
+
             // Initialize sites
             Room struervej = new("Struervej", "Du står på parkeringspladsen foran Struervej");
             Room uttrupvej = new("Øster Uttrup Vej", "Du står på parkeringspladsen foran Øster Uttrup Vej");

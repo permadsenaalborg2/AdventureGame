@@ -19,7 +19,7 @@ namespace Adventure.Editor
             }
         }
 
-        public override string Title { get; set; } 
+        public override string Title { get; set; }
         protected override void Draw()
         {
             Form<Room> editor = new();

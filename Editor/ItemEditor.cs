@@ -21,7 +21,7 @@ namespace Adventure.Editor
             }
         }
 
-        public override string Title { get; set; } 
+        public override string Title { get; set; }
         protected override void Draw()
         {
             Form<Item> editor = new();
@@ -32,7 +32,7 @@ namespace Adventure.Editor
             var room_dict = new Dictionary<string, object>();
             foreach (var room in roomlist)
             {
-                room_dict[room.Name] = (object) 
+                room_dict[room.Name] = (object)
                     room.Name;
             }
             editor.SelectBox("Location", "Location", room_dict);
