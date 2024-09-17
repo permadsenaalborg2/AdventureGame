@@ -60,6 +60,7 @@ namespace Adventure.Editor
         {
             Screen.Display(new HelpScreen());
         }
+
         void Quit(Room _)
         {
             Quit();

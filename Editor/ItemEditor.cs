@@ -7,11 +7,11 @@ namespace Adventure.Editor
         public Item CurrentItem { get; set; }
         private readonly List<Room> roomlist;
 
-        public EditItemScreen(Item i, List<Room> myroomlist)
+        public EditItemScreen(Item it, List<Room> myroomlist)
         {
             roomlist = myroomlist;
-            CurrentItem = i;
-            if (i.IsDefault())
+            CurrentItem = it;
+            if (it.IsDefault())
             {
                 Title = "Add Item";
             }

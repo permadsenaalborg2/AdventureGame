@@ -1,7 +1,6 @@
 ﻿namespace Adventure
 {
     public class ExitDictionary : Dictionary<string, Room>
-    //public class ExitDictionary : Dictionary<RoomExit>
     {
         public string ToStringMultiLine()
         {
@@ -25,5 +24,28 @@
 
             return result;
         }
+
+        public List<RoomExit> ExitList()
+        {
+            List<RoomExit> result = new();
+            foreach (var (exitname, room) in this)
+            {
+                result.Add(new RoomExit($"{exitname}: {room.Name}"));
+            }
+
+            return result;
+        }
+
+        public Dictionary<string, object> OptionDict()
+        {
+            Dictionary<string, object> result = new();
+            foreach (var (exitname, room) in this)
+            {
+                result[exitname] =  (object) room;
+            }
+
+            return result;
+        }
+
     }
 }
