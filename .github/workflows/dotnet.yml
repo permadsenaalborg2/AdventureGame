@@ -44,7 +44,7 @@ jobs:
       working-directory: main
 
     - name: Build the Docker image
-      run: docker build . --file main/Adventure.dockerfile --tag ghcr.io/adventuregame
+      run: docker build . --file main/Adventure.dockerfile --tag ghcr.io:permadsenaalborg2/adventuregame
 
     - name: Login to GitHub Container Registry
       uses: docker/login-action@v3
@@ -54,7 +54,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Push the Docker image
-      run: docker push ghcr.io/adventuregame
+      run: docker push ghcr.io:permadsenaalborg2/adventuregame
 
     # Use this for debug
     #- name: Setup tmate session
