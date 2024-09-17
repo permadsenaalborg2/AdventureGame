@@ -2,7 +2,7 @@ name: Build OCI / Docker image
 
 on:
   workflow_run:
-    workflows: [".NET"]
+    workflows: ["Build, Test & Publish"]
 
 jobs:
 
