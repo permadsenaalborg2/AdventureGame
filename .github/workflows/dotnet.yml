@@ -43,3 +43,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
       working-directory: main
+
+    - name: Publish
+      run: dotnet publish
+      working-directory: main
