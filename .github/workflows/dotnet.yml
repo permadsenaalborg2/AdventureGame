@@ -1,6 +1,6 @@
-# This workflow will build a .NET project
+# This workflow will build / test & public the projects in the solution file
 
-name: .NET
+name: Build, Test & Publish
 
 on:
   push:
