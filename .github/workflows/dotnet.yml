@@ -1,17 +1,12 @@
-# This workflow will build a .NET project
+# This workflow will build / test & public the projects in the solution file
 
-name: .NET
+name: Build, Test & Publish
 
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
-# Use this for debug
-#    - name: Setup tmate session
-#      uses: mxschmitt/action-tmate@v3
-
 
 jobs:
   build:
@@ -47,3 +42,7 @@ jobs:
     - name: Publish
       run: dotnet publish
       working-directory: main
+
+    # Use this for debug
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
