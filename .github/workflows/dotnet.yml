@@ -66,5 +66,5 @@ jobs:
       run: docker push ghcr.io/${{ github.actor }}/adventuregame
 
     # Use this for debug
-    #- name: Setup tmate session
-    #  uses: mxschmitt/action-tmate@v3
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
